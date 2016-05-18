@@ -36,7 +36,7 @@ function sendGenericMessage(sender) {
                     "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
                     "buttons": [{
                         "type": "web_url",
-                        "url": "https://www.messenger.com",
+                        "url": "http://riviumbrightanswers.com/en/",
                         "title": "web url"
                     }, {
                         "type": "postback",
@@ -113,6 +113,7 @@ app.post('/webhook/', function (req, res) {
             }
             sendTextMessage(sender, "Text received, you said: " + text.substring(0, 200))
         }
+		
         if (event.postback) {
             text = JSON.stringify(event.postback)
             sendTextMessage(sender, "Postback received: "+text.substring(0, 200), token)
